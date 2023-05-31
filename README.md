@@ -1,4 +1,4 @@
 # kcrm
 Local CRM product. 
-Used MySQL DB
+Used MySQL DB.
 To build need QT
