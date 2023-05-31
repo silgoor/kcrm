@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1097</width>
+    <height>656</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Kcrm</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="kcrm.qrc">
+    <normaloff>:/images/kcrm.png</normaloff>:/images/kcrm.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="officeLabel">
+        <property name="text">
+         <string>Офис</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="officeComboBox">
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="maxVisibleItems">
+         <number>20</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="filterLabel">
+        <property name="text">
+         <string>Фильтр</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="filterLineEdit">
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="leftPanelSplitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="childrenCollapsible">
+        <bool>false</bool>
+       </property>
+       <widget class="QGroupBox" name="datesGroupBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string>Даты</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QTreeWidget" name="datesTreeWidget">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Заявки: дата выполнения&lt;/p&gt;&lt;p&gt;Договора: дата следующего то&lt;/p&gt;&lt;p&gt;Клиенты: дата следующего звонка&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(252, 255, 210);s</string>
+           </property>
+           <property name="verticalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+           <property name="animated">
+            <bool>true</bool>
+           </property>
+           <attribute name="headerVisible">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string notr="true">1</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetMinimumSize</enum>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Minimum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="todayPushButton">
+             <property name="text">
+              <string>Сегодня</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QTextEdit" name="requestInfoTextEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(211, 238, 255);</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="requestsTab">
+        <attribute name="title">
+         <string>Заявки</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>5</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QPushButton" name="newRequestPushButton">
+                <property name="toolTip">
+                 <string>Новая заявка</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="kcrm.qrc">
+                  <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="copyRequestPushButton">
+                <property name="text">
+                 <string>Коп.</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="performerLabel">
+                <property name="text">
+                 <string>Мастер</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="performerComboBox"/>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableView" name="requestsTableView">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>5</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerItem</enum>
+              </property>
+              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderDefaultSectionSize">
+               <number>25</number>
+              </attribute>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="agreementsTab">
+        <attribute name="title">
+         <string>Договора</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="agrFilterTrestLabel">
+             <property name="text">
+              <string>Трест</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="agrFilterTrestComboBox"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="agrFilterTypeLabel">
+             <property name="text">
+              <string>Тип</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="agrFilterTypeComboBox"/>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="showTerminatedAgreementsCheckBox">
+             <property name="text">
+              <string>Показать расторгнутые</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="newAgreementPushButton">
+             <property name="toolTip">
+              <string>Новый договор</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="kcrm.qrc">
+               <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableView" name="agreementsTableView">
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="verticalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+           <property name="horizontalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>true</bool>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="clientsTab">
+        <attribute name="title">
+         <string>Клиенты</string>
+        </attribute>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QTableView" name="clientsTableView">
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="documentsTab">
+        <attribute name="title">
+         <string>Документы</string>
+        </attribute>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>899</width>
+              <height>396</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <layout class="QGridLayout" name="documentsGridLayout"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1097</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="dialogsMenu">
+    <property name="title">
+     <string>Окна</string>
+    </property>
+    <widget class="QMenu" name="columnsMenu">
+     <property name="title">
+      <string>Столбцы заявок</string>
+     </property>
+     <addaction name="columnCreateDateAction"/>
+     <addaction name="columnPerformDateAction"/>
+     <addaction name="columnDirectionAction"/>
+     <addaction name="columnAddressAction"/>
+     <addaction name="columnSurnameAction"/>
+     <addaction name="columnNameAction"/>
+     <addaction name="columnPhone1Action"/>
+     <addaction name="columnPhone2Action"/>
+     <addaction name="columnDeviceNameAction"/>
+     <addaction name="columnDefectAction"/>
+     <addaction name="columnCostAction"/>
+     <addaction name="columnPerformerAction"/>
+     <addaction name="columnCreatorAction"/>
+     <addaction name="columnStatusAction"/>
+     <addaction name="columnCollectionAction"/>
+    </widget>
+    <addaction name="columnsMenu"/>
+    <addaction name="separator"/>
+    <addaction name="performerBillsAction"/>
+    <addaction name="optionsAction"/>
+    <addaction name="officesAction"/>
+    <addaction name="trestsAction"/>
+    <addaction name="usersAction"/>
+    <addaction name="directionsAction"/>
+    <addaction name="separator"/>
+    <addaction name="eventsAction"/>
+    <addaction name="timesheetAction"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Действия</string>
+    </property>
+    <addaction name="refreshAction"/>
+    <addaction name="copySelectedAction"/>
+    <addaction name="separator"/>
+    <addaction name="backupAction"/>
+    <addaction name="resetAmountsAction"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="dialogsMenu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="refreshAction">
+   <property name="text">
+    <string>Обновить</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="optionsAction">
+   <property name="text">
+    <string>Параметры</string>
+   </property>
+  </action>
+  <action name="officesAction">
+   <property name="text">
+    <string>Офисы</string>
+   </property>
+  </action>
+  <action name="copySelectedAction">
+   <property name="text">
+    <string>Копировать выделение</string>
+   </property>
+  </action>
+  <action name="columnCreateDateAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Дата создания</string>
+   </property>
+  </action>
+  <action name="columnPerformDateAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Дата выполнения</string>
+   </property>
+  </action>
+  <action name="columnAddressAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Адрес</string>
+   </property>
+  </action>
+  <action name="columnSurnameAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Фамилия</string>
+   </property>
+  </action>
+  <action name="columnNameAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Имя</string>
+   </property>
+  </action>
+  <action name="columnPhone1Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Телефон 1</string>
+   </property>
+  </action>
+  <action name="columnPhone2Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Телефон 2</string>
+   </property>
+  </action>
+  <action name="columnDeviceNameAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Марка/модель</string>
+   </property>
+  </action>
+  <action name="columnDefectAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Неисправность</string>
+   </property>
+  </action>
+  <action name="columnCostAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Сумма мастера</string>
+   </property>
+  </action>
+  <action name="columnPerformerAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Мастер</string>
+   </property>
+  </action>
+  <action name="columnCreatorAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Диспетчер</string>
+   </property>
+  </action>
+  <action name="columnStatusAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Состояние</string>
+   </property>
+  </action>
+  <action name="columnCollectionAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Инкассация</string>
+   </property>
+  </action>
+  <action name="eventsAction">
+   <property name="text">
+    <string>События</string>
+   </property>
+  </action>
+  <action name="backupAction">
+   <property name="text">
+    <string>Резервное копирование БД</string>
+   </property>
+  </action>
+  <action name="performerBillsAction">
+   <property name="text">
+    <string>Счета</string>
+   </property>
+  </action>
+  <action name="timesheetAction">
+   <property name="text">
+    <string>Табель рабочего времени</string>
+   </property>
+  </action>
+  <action name="resetAmountsAction">
+   <property name="text">
+    <string>Сброс сумм</string>
+   </property>
+  </action>
+  <action name="usersAction">
+   <property name="text">
+    <string>Пользователи</string>
+   </property>
+  </action>
+  <action name="trestsAction">
+   <property name="text">
+    <string>Тресты</string>
+   </property>
+  </action>
+  <action name="directionsAction">
+   <property name="text">
+    <string>Направления</string>
+   </property>
+  </action>
+  <action name="columnDirectionAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Направление</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="kcrm.qrc"/>
+ </resources>
+ <connections/>
+</ui>

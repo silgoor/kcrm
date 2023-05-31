@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/new32.png</file>
+        <file>images/edit32.png</file>
+        <file>images/ok32.png</file>
+        <file>images/trash32.png</file>
+        <file>images/cancel32.png</file>
+        <file>images/printer.png</file>
+        <file>images/edit.png</file>
+        <file>images/printer-1.png</file>
+        <file>images/kcrm.png</file>
+        <file>images/kcrm.icns</file>
+        <file>images/folder.png</file>
+        <file>images/new.png</file>
+        <file>images/DocumentAdd.png</file>
+        <file>images/lock64.png</file>
+        <file>images/unlock64.png</file>
+        <file>images/save64.png</file>
+        <file>images/email64.png</file>
+        <file>images/client32.png</file>
+    </qresource>
+</RCC>
